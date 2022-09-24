@@ -51,29 +51,6 @@ src="${location.href}?id=${eid}"
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-          `;
-          prompt('Here is Your Embed Code :- ',embed);
-          window.location.href = window.location.href+'?id='+eid;
-        }
-        video = getParameterByName('id') ;
-        if(getParameterByName('ib')){
-            video = btoa(getParameterByName('ib'));
-        }
-        var vidurl = "https://www.googleapis.com/drive/v3/files/"+video+"?alt=media&key="+apikey;
-        document.write("<video controls id='video' src="+vidurl+"></video>");
-
-
-function getembed(){
-            var code = `
-<iframe width="560" height="315"
-scrolling="no"
-src="${location.href}?id=${video}"
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-          `;
-          prompt('Here is Your Embed Code :- ',code);
-}
 
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -102,7 +79,7 @@ function getParameterByName(name, url = window.location.href) {
 		},
 		"autoPlay": false,
 		"mute": false,
-		"allowTheatre": true,
+		"allowTheatre": false,
 		"playPauseAnimation": true,
 		"playbackRateEnabled": true,
 		"allowDownload": false,
